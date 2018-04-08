@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
-import Searcher from './Searcher'
-import Shelfer from './Shelfer'
+import Searcher from './components/Searcher'
+import Shelfer from './components/Shelfer'
 import './App.css'
 
 class BooksApp extends Component {
@@ -145,7 +145,7 @@ class BooksApp extends Component {
           <Route exact path='/' 
             render={() => (
               <Shelfer 
-                title={'My Books'}
+                title={'Bookz'}
                 shelfSplitter={this.shelfSplitter}
                 changeShelf={this.changeShelf}
                 clearSearchedBooks={this.clearSearchedBooks}/>
