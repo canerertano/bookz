@@ -12,13 +12,16 @@ class Shelfer extends Component{
                 <div className="list-books-content">
                     <div>
                         <BookShelf 
-                            bookShelf={this.props.shelfSplitter('currentlyReading')} 
+                            title='Currently Reading'
+                            books={this.props.shelfSplitter('currentlyReading')} 
                             changeShelf={this.props.changeShelf}/>
                         <BookShelf 
-                            bookShelf={this.props.shelfSplitter('wantToRead')} 
+                            title='Want to Read'
+                            books={this.props.shelfSplitter('wantToRead')} 
                             changeShelf={this.props.changeShelf}/>
                         <BookShelf 
-                            bookShelf={this.props.shelfSplitter('read')} 
+                            title='Read'
+                            books={this.props.shelfSplitter('read')} 
                             changeShelf={this.props.changeShelf}/>
                     </div>
                 </div>

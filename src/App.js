@@ -17,32 +17,8 @@ class BooksApp extends Component {
   }
 
   shelfSplitter = (shelf) => {
-    if (shelf === 'currentlyReading') {
-      return {
-        title: 'Currently Reading',
-        books: this.state.books.filter((book) => (
-          book.shelf === shelf
-        ))
-      }
-    }
-
-    if(shelf === 'wantToRead'){
-      return {
-        title: 'Want to Read',
-        books: this.state.books.filter((book) => (
-          book.shelf === shelf
-        ))
-      }
-    }
-
-    if(shelf === 'read'){
-      return {
-        title: 'Read',
-        books: this.state.books.filter((book) => (
-          book.shelf === shelf
-        ))
-      }
-    }
+    return this.state.books.filter((book) => (
+        book.shelf === shelf))
   }
 
   findShelf = (bookId) => {
@@ -67,15 +43,18 @@ class BooksApp extends Component {
         } 
       })
 
-      if(!exist)
+      if(!exist){
+        book.shelf = shelf
         vBooks.push(book)
+      }
 
       this.setState({
         books: vBooks,
         shelfs: response
       })
 
-      if(history !== undefined)
+      if((history !== undefined && shelf !== 'none') 
+        || (history !== undefined && exist && shelf === 'none'))
         history.push('/');
     })
   }
@@ -92,14 +71,10 @@ class BooksApp extends Component {
         })
       })
       .catch((err) => {
-        this.setState({
-          searchedBooks: []
-        })
+        this.clearSearchedBooks()
       })
     } else {
-      this.setState({
-        searchedBooks: []
-      })
+      this.clearSearchedBooks()
     }
   }
 
@@ -133,7 +108,6 @@ class BooksApp extends Component {
     return (
       <Router>
         <div className="app">
-
           <Route path='/search' 
             render={({history}) => (
               <Searcher
@@ -150,7 +124,6 @@ class BooksApp extends Component {
                 changeShelf={this.changeShelf}
                 clearSearchedBooks={this.clearSearchedBooks}/>
             )} />
-        
         </div>
       </Router>
     )
