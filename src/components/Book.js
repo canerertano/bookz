@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import BookShelfChanger from './BookShelfChanger'
 
 class Book extends Component {
+    static propTypes = {
+		book : PropTypes.object.isRequired,
+        changeShelf : PropTypes.func.isRequired
+    }
+    
     render () {
-        const { book, changeShelf } = this.props
+        const { book, changeShelf, history } = this.props
         return (
             <div className="book">
                 <div className="book-top">
@@ -12,7 +18,7 @@ class Book extends Component {
                     <BookShelfChanger 
                         book={book}
                         changeShelf={changeShelf}
-                        history={this.props.history}/>
+                        history={history}/>
                 </div>
                 <div className="book-title">{book.title}</div>
                 {book.authors && book.authors.length > 0 && book.authors.map((author, index) => (
