@@ -72,6 +72,7 @@ class BooksApp extends Component {
       })
       .catch((err) => {
         this.clearSearchedBooks()
+        console.log(err)
       })
     } else {
       this.clearSearchedBooks()

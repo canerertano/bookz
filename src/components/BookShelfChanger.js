@@ -11,9 +11,9 @@ class BookShelfChanger extends Component {
         const {book, changeShelf, history} = this.props
         return (
             <div className="book-shelf-changer">
-                <select value={book.shelf !== undefined ? book.shelf:"unselected"}
+                <select value={book.shelf !== undefined ? book.shelf:"none"}
                     onChange={(event) => changeShelf(book, event.target.value, history)}>
-                    <option value="unselected" disabled>Move to...</option>
+                    <option disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>
                     <option value="read">Read</option>
