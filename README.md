@@ -1,13 +1,13 @@
-# MyReads Project 'Bookz'
+# Bookz Project
 
-This is the Udacity React Nanodegree project no.1. This project developed on top of starter template.
+This is the Udacity React Nanodegree project no.1 Myreads. This project developed on top of starter template.
 In this app you can add books to shelfs and delete or change shelf of a book. 
 
 ## Installation
 
 To run the app:
-* make sure that you have already installed the npm and node.js
-* clone this repository
+* make sure that you have already installed the node.js and npm
+* cloneor download this repository
 * change directory by typing 
     ```sh
         $ cd bookz
@@ -16,11 +16,12 @@ To run the app:
     ```sh
         $ npm install
     ```
-* start the development server with
+* start the server with
     ```sh
         $ npm start
     ```
 * open the 'http://localhost:3000/' link in the browser
 
 ## Author
+
 Caner Ertano @cnrkfks
