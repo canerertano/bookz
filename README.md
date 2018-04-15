@@ -6,8 +6,11 @@ In this app you can add books to shelfs and delete or change shelf of a book.
 ## Installation
 
 To run the app:
+
 * make sure that you have already installed the node.js and npm
-* cloneor download this repository
+
+* clone or download this repository
+
 * change directory by typing 
     ```sh
         $ cd bookz
