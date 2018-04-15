@@ -63,12 +63,16 @@ class BooksApp extends Component {
     if(query && query.length > 0){
       BooksAPI.search(query)
       .then((books) => {
-        books.forEach((book) => {
-          book.shelf = this.findShelf(book.id)
-        })
-        this.setState({
-          searchedBooks: books
-        })
+        if(books && books.length > 0){
+          books.forEach((book) => {
+            book.shelf = this.findShelf(book.id)
+          })
+          this.setState({
+            searchedBooks: books
+          })
+        } else {
+          this.clearSearchedBooks()
+        }
       })
       .catch((err) => {
         this.clearSearchedBooks()
